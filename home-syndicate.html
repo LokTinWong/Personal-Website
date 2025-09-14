@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Home - The Syndicate</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h2 {
+            color: rgb(0, 146, 156);
+        }
+
+        #members {
+            background-color: rgb(207, 207, 207);
+        }
+
+        #update-names-button {
+            margin-bottom: 10px;
+        }
+
+        #display-all-button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Syndicate</h1>
+
+    <h2>Our Factions</h2>
+    
+    <img
+        src="https://factionimages.torn.com/8d323a1c-d3a5-4e97-ae4e-724beb2002dd-37537.png"
+        onclick = "displayRegiment()"
+    >
+
+    <img
+        src="https://factionimages.torn.com/7d436afb-9793-494e-9c0a-32c5299c59e3-41259.png"
+        onclick = "displayBattleground()"
+    >
+
+    <img
+        src="https://factionimages.torn.com/c7abb49c-e804-4f91-b60f-619c8585f9d8-48757.png"
+        onclick = "displayBrigata()"
+    >
+
+    <img 
+        src="https://factionimages.torn.com/76b7df79-a132-463a-a1e3-6e3e1d6ff91c-50262.png"
+        onclick = "displayFoundry()"
+    >
+
+    <img
+        src="https://factionimages.torn.com/e8c8a04b-1594-4223-b0f4-1457a42c231a-49637.png"
+        onclick = "displayForge()"
+    >
+
+    <img
+        src="https://factionimages.torn.com/0102426e-8e41-484f-94e3-81dadd5798bb-52639.png"
+        onclick = "displayCrucible()"
+    >
+
+
+
+
+
+
+
+    <h2>Leaders</h2>
+
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=37537" target="_blank" rel="noopener noreferrer">SYN - The Regiment</a><br>
+        fullonninja17 [1556020]<br>
+        JohnnyDeuce [1981825]
+    </p>
+        
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=41259" target="_blank" rel="noopener noreferrer">SYN - Battleground</a><br>
+        LordMizak [2672115]
+    </p>
+
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=48757" target="_blank" rel="noopener noreferrer">SYN - Brigata</a><br>
+        kate_thrasher [2676094]<br>
+        CT-7567 [2027046]
+    </p>
+
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=50262" target="_blank" rel="noopener noreferrer">SYN - Foundry</a><br>
+        MrVicRattlehead [2973727]<br>
+        Norra [3207260]
+    </p>
+
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=49637" target="_blank" rel="noopener noreferrer">SYN - Forge</a><br>
+        TimBobTastic [2941916]<br>
+        BunnyCube [3229523]
+    </p>
+
+    <p>
+        <a href="https://www.torn.com/factions.php?step=profile&ID=52639" target="_blank" rel="noopener noreferrer">SYN - Crucible</a><br>
+        GDeth [3242432]<br>
+        Manddragun [3201138]
+    </p>
+
+    <p>
+        <a href="https://www.torn.com/profiles.php?XID=2675693" target="_blank" rel="noopener noreferrer">Ex-leader of SYN - Foundry, current Tech Support</a><br>
+        Per5eus [2675693]
+    </p>
+    
+
+
+
+
+
+
+    <h2>Members</h2>
+
+    <a href="./awards-syndicate.html">Awards</a>
+
+    <p>Press "Update Names" first.</p>
+
+    <button id="update-names-button" onclick="updateNames()">Update Names</button><br>
+    <button id="display-all-button" onclick="displayAll()">Display All Members</button>
+
+    <div id = "members" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px;">
+        <ul id="regiment-list"></ul>
+        <ul id="battleground-list"></ul>
+        <ul id="brigata-list"></ul>
+        <ul id="foundry-list"></ul>
+        <ul id="forge-list"></ul>
+        <ul id="crucible-list"></ul>
+    </div>
+    
+    <p id="member-count"></p>
+
+    <p>Website ideas proposed by <strong>LordMizak</strong>, made by <strong>Per5eus</strong>.</p>
+
+    <script>
+        let regNames = [];
+        let batNames = [];
+        let brigNames = [];
+        let founNames = [];
+        let forgNames = [];
+        let crucNames = [];
+
+        function displayAll() {
+            var memberCount = 0;
+            
+            const regL = document.getElementById("regiment-list");
+            regL.innerHTML = ""; // Clear previous list
+            regNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                regL.appendChild(li);
+                memberCount++;
+            });
+
+            const batL = document.getElementById("battleground-list");
+            batL.innerHTML = ""; // Clear previous list
+            batNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                batL.appendChild(li);
+                memberCount++;
+            });
+
+            const brigL = document.getElementById("brigata-list");
+            brigL.innerHTML = ""; // Clear previous list
+            brigNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                brigL.appendChild(li);
+                memberCount++;
+            });
+            
+            const founL = document.getElementById("foundry-list");
+            founL.innerHTML = ""; // Clear previous list
+            founNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                founL.appendChild(li);
+                memberCount++;
+            });
+            
+            const forgL = document.getElementById("forge-list");
+            forgL.innerHTML = ""; // Clear previous list
+            forgNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                forgL.appendChild(li);
+                memberCount++;
+            });
+
+            const crucL = document.getElementById("crucible-list");
+            crucL.innerHTML = ""; // Clear previous list
+            crucNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                crucL.appendChild(li);
+                memberCount++;
+            });
+
+            document.getElementById("regiment-list").style.display = "block";
+            document.getElementById("battleground-list").style.display = "block";
+            document.getElementById("brigata-list").style.display = "block";
+            document.getElementById("foundry-list").style.display = "block";
+            document.getElementById("forge-list").style.display = "block";
+            document.getElementById("crucible-list").style.display = "block";
+
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayRegiment() {
+            var memberCount = 0;
+
+            const regL = document.getElementById("regiment-list");
+            regL.innerHTML = ""; // Clear previous list
+            regNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                regL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("regiment-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayBattleground() {
+            var memberCount = 0;
+
+            const batL = document.getElementById("battleground-list");
+            batL.innerHTML = ""; // Clear previous list
+            batNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                batL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("battleground-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayBrigata() {
+            var memberCount = 0;
+            
+            const brigL = document.getElementById("brigata-list");
+            brigL.innerHTML = ""; // Clear previous list
+            brigNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                brigL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("brigata-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayFoundry() {
+            var memberCount = 0;
+
+            const founL = document.getElementById("foundry-list");
+            founL.innerHTML = ""; // Clear previous list
+            founNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                founL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("foundry-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayForge() {
+            var memberCount = 0;
+
+            const forgL = document.getElementById("forge-list");
+            forgL.innerHTML = ""; // Clear previous list
+            forgNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                forgL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("forge-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        function displayCrucible() {
+            var memberCount = 0;
+
+            const crucL = document.getElementById("crucible-list");
+            crucL.innerHTML = ""; // Clear previous list
+            crucNames.forEach(name => {
+                const li = document.createElement("li");
+                li.textContent = name;
+                crucL.appendChild(li);
+                memberCount++;
+            });
+
+            hideAll();
+            document.getElementById("crucible-list").style.display = "block";
+            document.getElementById("member-count").innerHTML = "Number of members: " + memberCount;
+        }
+
+        // Generate API call based on given faction ID.
+        function makeCall(id) {
+            return "https://api.torn.com/faction/" + id + "?key=VvOjQbneZyyFW5j0&selections=basic";
+        }
+
+        // Get the JSON response from the API and save it as an object
+        async function makeJson(url) {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        }
+
+        // This function is async because makeJson is async
+        async function updateNames() {
+            try {
+                // Get data for The Regiment
+                const regData = await makeJson(makeCall(37537));
+                const regMembers = regData.members;
+
+                // Get data for Battleground
+                const batData = await makeJson(makeCall(41259));
+                const batMembers = batData.members;
+
+                // Get data for Brigata
+                const brigData = await makeJson(makeCall(48757));
+                const brigMembers = brigData.members;
+
+                // Get data for Foundry
+                const founData = await makeJson(makeCall(50262));
+                const founMembers = founData.members;
+
+                // Get data for Forge
+                const forgData = await makeJson(makeCall(49637));
+                const forgMembers = forgData.members;
+
+                // Get data for Crucible
+                const crucData = await makeJson(makeCall(52639));
+                const crucMembers = crucData.members;
+                
+                // Logging fetched members for debugging.
+                console.log("Fetched The Regiment members:", regMembers);
+                console.log("Fetched Battleground members:", batMembers);
+                console.log("Fetched Brigata members:", brigMembers);
+                console.log("Fetched Foundry members:", founMembers);
+                console.log("Fetched Forge members:", forgMembers);
+                console.log("Fetched Crucible members:", crucMembers);
+                
+                for (const id in regMembers) {
+                    const member = regMembers[id];
+                    regNames.push(member.name);
+                }
+
+                for (const id in batMembers) {
+                    const member = batMembers[id];
+                    batNames.push(member.name);
+                }
+
+                for (const id in brigMembers) {
+                    const member = brigMembers[id];
+                    brigNames.push(member.name);
+                }
+
+                for (const id in founMembers) {
+                    const member = founMembers[id];
+                    founNames.push(member.name);
+                }
+
+                for (const id in forgMembers) {
+                    const member = forgMembers[id];
+                    forgNames.push(member.name);
+                }
+
+                for (const id in crucMembers) {
+                    const member = crucMembers[id];
+                    crucNames.push(member.name);
+                }
+
+                console.log("Updated!");
+                alert("Names updated! Click one of the faction banners to show its members.");
+            } catch (error) {
+                console.error("API call failed:", error);
+            }
+        }
+
+        // Hide all names.
+        function hideAll() {
+            document.getElementById("regiment-list").style.display = "none";
+            document.getElementById("battleground-list").style.display = "none";
+            document.getElementById("brigata-list").style.display = "none";
+            document.getElementById("foundry-list").style.display = "none";
+            document.getElementById("forge-list").style.display = "none";
+            document.getElementById("crucible-list").style.display = "none";
+        }
+    </script>
+</body>
+</html>
