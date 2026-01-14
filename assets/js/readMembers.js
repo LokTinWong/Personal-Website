@@ -15,7 +15,7 @@ fetch("members.json")
         
         // If member has the Boot Camp award, give corresponding badge, otherwise create an empty placeholder.
         if (member.hasBootCamp) {
-            bootCampImg.src = "./bootCampAward.png";
+            bootCampImg.src = "images/bootCampAward.png";
             bootCampImg.alt = "Boot Camp award";
             bootCampImg.style.visibility = "visible";
         } else {
@@ -29,7 +29,7 @@ fetch("members.json")
 
         // If member has the Veteran award, give corresponding badge, otherwise create an empty placeholder.
         if (member.hasAward) {
-            veteranImg.src = "./veteranAward.png";
+            veteranImg.src = "images/veteranAward.png";
             veteranImg.alt = "Veteranaward";
             veteranImg.style.visibility = "visible";
         } else {
@@ -43,7 +43,7 @@ fetch("members.json")
 
         // If member has the award, give corresponding badge, otherwise create an empty placeholder.
         if (member.hasAward) {
-            awardImg.src = "./badge.jpg";
+            awardImg.src = "images/badge.jpg";
             awardImg.alt = "Arbitrary badge";
             awardImg.style.visibility = "visible";
         } else {
