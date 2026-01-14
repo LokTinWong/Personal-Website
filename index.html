@@ -169,7 +169,6 @@
 												<ul class="actions">
 													<li><a href="https://www.wattpad.com/story/307557054-siege-of-dragoncrest" target="_blank" rel="noopener noreferrer" class="button wattpad">Short Story</a></li>
 													<li><a href="https://docs.google.com/document/d/18Tm-4Tp0_Z1crZ-fKCwcm0e6rTheFMup9bD7eP1vm7w/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="button story">Story Excerpts</a></li>
-													<li><a href="https://docs.google.com/document/d/1P32fKekWbOMVwnWLV8-v7kysVQAz2pEuJ3GhZw7SqhM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="button story 40K">Recent Story</a></li>
 												</ul>
 											</div>
 										</article>
@@ -611,12 +610,25 @@
 
 			</div>
 
+			<!-- To Top Button -->
+			<button id="toTop" aria-label="Back to top" title="Back to top">⬆</button>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Keep the button always visible and scroll to top smoothly
+				(function () {
+					var button = document.getElementById('toTop');
+					if (!button) return;
+					button.addEventListener('click', function () {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					});
+				})();
+			</script>
 
 	</body>
 </html>
