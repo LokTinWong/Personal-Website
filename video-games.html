@@ -409,12 +409,25 @@
 
 			</div>
 
+			<!-- To Top Button -->
+			<button id="toTop" aria-label="Back to top" title="Back to top">⬆</button>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Keep the button always visible and scroll to top smoothly
+				(function () {
+					var button = document.getElementById('toTop');
+					if (!button) return;
+					button.addEventListener('click', function () {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					});
+				})();
+			</script>
 
 	</body>
 </html>
