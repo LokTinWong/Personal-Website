@@ -42,7 +42,7 @@ All content is written by Lok Tin Wong, without the assistance of the template o
 The majority (over 99%) of the `assets` folder is made by the original template. Lok Tin only made minor design changes to better suit his website.
 
 ### `images` Folder
-Since the demo images were removed, all images in the images folder are created by Lok Tin himself (except `badge.jpg`). These are unique and do not exist anywhere else on the internet.
+Since the demo images were removed, all images in the images folder are created by Lok Tin himself. They are unique and do not exist anywhere else on the internet.
 
 ### `music` Folder
 `sm2.mp3` originates from https://youtu.be/kwX5bcmdgDU?si=jeq8g5_-72tLQrKM.
