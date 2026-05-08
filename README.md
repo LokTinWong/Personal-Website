@@ -1,7 +1,10 @@
+# Lok Tin's Personal Website
+This is a website that introduces Lok Tin's hobbies, passions, and perspectives. Originally made for his future job search, but quickly became an ongoing project of personal interest. Whenever he gets an opportunity to write, Lok Tin would pour his heart into the piece, perfecting it to the best of his abilities.
+
 ## Website Link
 https://loktinwong.github.io/Personal-Website/
 
-# Editorial by HTML5 UP
+## Editorial by HTML5 UP
 The following section is written by the original creator of the website template, not Lok Tin.
 
 [html5up.net](https://html5up.net/) | [@ajlkn](https://github.com/ajlkn)
